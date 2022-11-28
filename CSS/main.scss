@@ -1,0 +1,147 @@
+$Very-Dark-Grayish-Blue: hsl(217, 19%, 35%);
+$Desaturated-Dark-Blue: hsl(214, 17%, 51%);
+$Grayish-Blue: hsl(212, 23%, 69%);
+$Light-Grayish-Blue: hsl(210, 46%, 95%);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $Light-Grayish-Blue;
+  font-family: 'Manrope', sans-serif;
+}
+main {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  width: 700px;
+  border-radius: 10px;
+}
+
+.left {
+  //   flex: 4.5;
+  border-radius: 10px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px 0 0 10px;
+  }
+}
+
+.right {
+  //   flex: 6;
+  padding: 2rem 3rem;
+  background-color: white;
+  box-shadow: 3px 0 50px -10px $Grayish-Blue;
+  border-radius: 0 10px 10px 0;
+  h1 {
+    font-size: 1.4rem;
+    margin: 0rem 1rem 1rem 0;
+    color: $Very-Dark-Grayish-Blue;
+  }
+
+  p.desc {
+    font-size: 13px;
+    color: $Desaturated-Dark-Blue;
+    margin: 0rem 1rem 1rem 0;
+  }
+}
+
+.person-and-arrow {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .person {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .avatar {
+      img {
+        width: 40px;
+        border-radius: 50%;
+      }
+    }
+
+    .name-etal {
+      p.name {
+        font-weight: bold;
+        font-size: 13px;
+        color: $Very-Dark-Grayish-Blue;
+        margin-bottom: 3px;
+      }
+      p.date {
+        color: $Grayish-Blue;
+        font-size: 12px;
+      }
+    }
+  }
+
+  .arrow {
+    background-color: $Light-Grayish-Blue;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 10;
+  }
+
+  .socials {
+    position: absolute;
+
+    background-color: $Very-Dark-Grayish-Blue;
+    height: 40px;
+    width: 230px;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    padding: 1rem 1.5rem;
+    justify-content: space-around;
+    z-index: 2;
+    top: -60px;
+    right: -98px;
+    transition: 0.7s ease;
+    //    opacity: 0;
+    visibility: hidden;
+  }
+
+  p.share {
+    color: $Grayish-Blue;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 13px;
+  }
+  i {
+    position: absolute;
+    bottom: -40px;
+    width: 0;
+    height: 0;
+    border: solid transparent;
+    border-width: 30px;
+    border-top-color: $Very-Dark-Grayish-Blue;
+    z-index: -1;
+
+    // background-color: $Very-Dark-Grayish-Blue;
+  }
+}
+
+.socials.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+@import "mediaq";
